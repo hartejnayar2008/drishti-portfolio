@@ -1,0 +1,80 @@
+/* Marquee Infinite Loop */
+@keyframes scrollMarquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.brand-cloud__list {
+    animation: scrollMarquee 20s linear infinite;
+    will-change: transform;
+}
+
+.brand-cloud__list:hover {
+    animation-play-state: paused;
+}
+
+/* Scroll Reveal Utilities */
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* Glassmorphism Header state */
+.header--scrolled {
+    background-color: rgba(247, 242, 235, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 0.85rem 0;
+}
+
+/* Hover Micro-interactions */
+.btn, .social-pill, .social-pill-large {
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover, .social-pill:hover, .social-pill-large:hover {
+    transform: translateY(-2px);
+}
+
+.card-reel {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.card-reel:hover {
+    transform: translateY(-6px);
+}
+
+.metric-card, .niche-card, .highlight-card {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.metric-card:hover, .niche-card:hover, .highlight-card:hover {
+    transform: translateY(-4px);
+}
+
+.carousel-btn {
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background-color: var(--text-brown);
+    color: var(--bg-cream);
+    transform: scale(1.05);
+}
