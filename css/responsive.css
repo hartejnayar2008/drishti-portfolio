@@ -1,147 +1,254 @@
-@media screen and (max-width: 1024px) {
-    :root {
-        --spacing-xl: 5rem;
-        --spacing-lg: 3rem;
-    }
+/* ==========================================================================
+   RESPONSIVE & MOBILE STYLES
+   ========================================================================== */
 
-    .hero__title {
-        font-size: 4rem;
-    }
-
-    .analytics__layout {
-        grid-template-columns: 1fr;
-    }
-
-    .highlight-card {
-        max-width: 500px;
-        margin: 0 auto;
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    :root {
-        --spacing-xl: 4rem;
-        --spacing-lg: 2rem;
-    }
-
-    .section-title {
-        font-size: 2.25rem;
-    }
-
-    .nav__list {
-        display: none;
-    }
-
-    .hero {
-        padding-top: 6rem;
-        min-height: auto;
-    }
-
+/* 1. Tablets & Medium Screens (max-width: 992px) */
+@media screen and (max-width: 992px) {
     .hero__container {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 2.5rem;
     }
 
-    .hero__description {
-        margin: 0 auto 1.5rem;
-    }
-
-    .hero__niches, .hero__actions, .hero__social-pills {
-        justify-content: center;
+    .hero__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .hero__visual {
-        height: 45vh;
-        order: -1;
+        order: -1; /* Places photo above text on mobile */
     }
 
-    .hero__badge {
-        right: 0;
-        top: -1rem;
-        width: 85px;
-        height: 85px;
-        font-size: 0.45rem;
-    }
-
-    .stats__container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .about__container {
-        grid-template-columns: 1fr;
-    }
-
-    .about__visual {
-        order: -1;
-    }
-
-    .about__image-wrapper {
-        height: 400px;
+    .hero__niches {
+        justify-content: center;
     }
 
     .portfolio__row {
         grid-template-columns: 1fr;
-        gap: 0.75rem;
+        gap: 1.5rem;
     }
 
-    .carousel-btn {
-        display: none;
+    .portfolio__category-info {
+        text-align: center;
     }
 
     .contact__container {
         grid-template-columns: 1fr;
     }
+}
 
-    .contact__visual {
-        height: 350px;
+/* 2. Mobile Phones (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    
+    /* Global Spacing */
+    .main-content > section {
+        padding: 3.5rem 0;
     }
 
+    [class$="__container"] {
+        padding: 0 1.25rem;
+    }
+
+    .section-title {
+        font-size: 2.25rem;
+        text-align: center;
+    }
+
+    /* Navbar */
+    .header {
+        padding: 0.85rem 0;
+        background-color: var(--bg-cream);
+    }
+
+    .header__container {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .nav__list {
+        gap: 0.85rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav__link {
+        font-size: 0.75rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding-top: 6.5rem;
+        min-height: auto;
+    }
+
+    .hero__title {
+        font-size: 3.25rem;
+    }
+
+    .hero__subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero__niches {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        font-size: 0.7rem;
+    }
+
+    .hero__niches li:not(:last-child)::after {
+        margin-left: 0.5rem;
+    }
+
+    .hero__social-pills {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .social-pill {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.85rem;
+    }
+
+    /* Hero Circle Image Scaling */
+    .hero__image-wrapper {
+        width: 250px;
+        height: 250px;
+        border-width: 4px;
+    }
+
+    /* Quick Stats */
+    .stats__container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .stat-card__number {
+        font-size: 2.25rem;
+    }
+
+    .stat-card__label {
+        font-size: 0.75rem;
+    }
+
+    /* Brand Cloud Marquee */
+    .brand-cloud__title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .brand-circle {
+        width: 75px;
+        height: 75px;
+        padding: 0.75rem;
+        margin: 0 0.5rem;
+    }
+
+    /* Portfolio (Video Reels Carousel) */
+    .portfolio__row {
+        grid-template-columns: 1fr;
+        margin-bottom: 2.5rem;
+    }
+
+    .portfolio__category-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .portfolio__category-info h3 {
+        margin-top: 0;
+    }
+
+    /* Hide desktop buttons on phone so touch swiping takes over */
+    .carousel-btn {
+        display: none;
+    }
+
+    /* Carousel Cards scale smoothly to 230px width on phone */
+    .card-reel {
+        flex: 0 0 230px;
+        padding: 0.5rem;
+    }
+
+    .card-reel__thumb {
+        height: 330px;
+        border-width: 2px;
+    }
+
+    /* Performance Analytics */
+    .analytics__metrics {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .metric-card {
+        text-align: center;
+        padding: 1.25rem;
+    }
+
+    .metric-card__value {
+        font-size: 2.25rem;
+    }
+
+    /* Collaborations Grid */
+    .collaborations__grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contact Section */
+    .contact__card {
+        padding: 2rem 1.25rem;
+    }
+
+    .contact__card .section-title {
+        font-size: 2.25rem;
+    }
+
+    .social-pill-large {
+        font-size: 0.8rem;
+        padding: 0.75rem 1rem;
+        max-width: 100%;
+    }
+
+    .contact__visual {
+        height: 300px;
+    }
+
+    /* Footer */
     .footer__container {
         flex-direction: column;
         gap: 1.5rem;
         text-align: center;
     }
+
+    .footer__nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
 }
 
-@media screen and (max-width: 480px) {
+/* 3. Small Mobile Phones (max-width: 400px) */
+@media screen and (max-width: 400px) {
     .hero__title {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
-    .hero__subtitle {
-        font-size: 1.25rem;
+    .hero__image-wrapper {
+        width: 210px;
+        height: 210px;
     }
 
-    .stats__container {
-        grid-template-columns: 1fr;
-    }
-
-    .about__details {
-        grid-template-columns: 1fr;
-    }
-
-    .analytics__metrics {
-        grid-template-columns: 1fr;
-    }
-}
-@media screen and (max-width: 1024px) {
-    /* 3 videos visible */
     .card-reel {
-        flex: 0 0 calc((100% - 2rem) / 3);
+        flex: 0 0 200px;
     }
-}
 
-@media screen and (max-width: 768px) {
-    /* 2 videos visible */
-    .card-reel {
-        flex: 0 0 calc((100% - 1rem) / 2);
-    }
-}
-
-@media screen and (max-width: 480px) {
-    /* 1 video visible */
-    .card-reel {
-        flex: 0 0 100%;
+    .card-reel__thumb {
+        height: 290px;
     }
 }
