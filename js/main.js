@@ -40,3 +40,32 @@ document.addEventListener('DOMContentLoaded', () => {
         statsObserver.observe(statsSection);
     }
 });
+
+// Auto-play videos when scrolled into view (Mobile & Desktop)
+document.addEventListener("DOMContentLoaded", () => {
+    const reelVideos = document.querySelectorAll(".card-reel__thumb");
+
+    const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            const video = entry.target;
+            if (entry.isIntersecting) {
+                // Ensure video is muted for mobile autoplay policy
+                video.muted = true;
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(() => {
+                        // Autoplay prevented by browser power-saver mode
+                    });
+                }
+            } else {
+                video.pause();
+            }
+        });
+    }, {
+        threshold: 0.5 // Plays video when 50% of it is visible on screen
+    });
+
+    reelVideos.forEach((video) => {
+        videoObserver.observe(video);
+    });
+});
