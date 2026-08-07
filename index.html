@@ -18,7 +18,7 @@
 <body>
 
     <!-- ================= NAVBAR ================= -->
-    <header class="header bg-cream" id="header">
+ <!--   <header class="header bg-cream" id="header">
         <div class="header__container">
             <a href="#hero" class="header__logo" aria-label="Home">
                 <span class="logo-text"></span>
@@ -38,7 +38,7 @@
                 <a href="#contact" class="btn btn--primary">Work With Me &rarr;</a>
             </div> -->
         </div>
-    </header>
+    </header> -->
 
     <main class="main-content">
         
@@ -180,8 +180,83 @@
         <section class="portfolio bg-cream" id="portfolio">
             <div class="portfolio__container">
                 <h2 class="section-title section-title--center text-brown">WORK AT A GLANCE</h2>
+
+                 <!-- Category 1: Accessories -->
+                <div class="portfolio__row">
+                    <div class="portfolio__category-info">
+                        <span class="icon-placeholder">👜</span>
+                        <h3 class="text-brown">ACCESSORIES</h3>
+                    </div>
+                    <div class="portfolio__carousel">
+                        <button class="carousel-btn carousel-btn--prev" aria-label="Previous">&larr;</button>
+                        <div class="portfolio__track">
+                            <article class="card-reel">
+                                <video 
+                                    class="card-reel__thumb" 
+                                    src="assets/reels/reels/Zouk.mp4" 
+                                    muted 
+                                    loop 
+                                    playsinline 
+                                    onmouseover="this.play()" 
+                                    onmouseout="this.pause()">
+                                </video>
+                                <div class="card-reel__info">
+                                    <h4>Zouk</h4>
+                                    <p>350K Views</p>
+                                </div>
+                            </article>
+                            <article class="card-reel">
+                                <video 
+                                    class="card-reel__thumb" 
+                                    src="assets/reels/reels/Lililo.mp4" 
+                                    muted 
+                                    loop 
+                                    playsinline 
+                                    onmouseover="this.play()" 
+                                    onmouseout="this.pause()">
+                                </video>
+                                <div class="card-reel__info">
+                                    <h4>Lililo</h4>
+                                    <p>20K Views</p>
+                                </div>
+                            </article>
+                            <article class="card-reel">
+                                <video 
+                                    class="card-reel__thumb" 
+                                    src="assets/reels/reels/Ecoright.mp4" 
+                                    muted 
+                                    loop 
+                                    playsinline 
+                                    onmouseover="this.play()" 
+                                    onmouseout="this.pause()">
+                                </video>
+                                <div class="card-reel__info">
+                                    <h4>Ecoright</h4>
+                                    <p>15K Views</p>
+                                </div>
+                            </article>
+                            <article class="card-reel">
+                                <video 
+                                    class="card-reel__thumb" 
+                                    src="assets/reels/reels/Lucien.mp4" 
+                                    muted 
+                                    loop 
+                                    playsinline 
+                                    onmouseover="this.play()" 
+                                    onmouseout="this.pause()">
+                                </video>
+                                <div class="card-reel__info">
+                                    <h4>Lucien</h4>
+                                    <p>10K Views</p>
+                                </div>
+                            </article>
+                        </div>
+                        <button class="carousel-btn carousel-btn--next" aria-label="Next">&rarr;</button>
+                    </div>
+                </div>
+
                 
-                <!-- Category 1: Fashion -->
+                <!-- Category 2: Fashion -->
                 <div class="portfolio__row">
                     <div class="portfolio__category-info">
                         <span class="icon-placeholder">👗</span>
@@ -242,7 +317,7 @@
                     </div>
                 </div>
 
-                <!-- Category 2: Skincare & Makeup -->
+                <!-- Category 3: Skincare & Makeup -->
                 <div class="portfolio__row">
                     <div class="portfolio__category-info">
                         <span class="icon-placeholder">🧴</span>
@@ -331,80 +406,7 @@
                     </div>
                 </div>
 
-                <!-- Category 3: Accessories -->
-                <div class="portfolio__row">
-                    <div class="portfolio__category-info">
-                        <span class="icon-placeholder">👜</span>
-                        <h3 class="text-brown">ACCESSORIES</h3>
-                    </div>
-                    <div class="portfolio__carousel">
-                        <button class="carousel-btn carousel-btn--prev" aria-label="Previous">&larr;</button>
-                        <div class="portfolio__track">
-                            <article class="card-reel">
-                                <video 
-                                    class="card-reel__thumb" 
-                                    src="assets/reels/reels/Zouk.mp4" 
-                                    muted 
-                                    loop 
-                                    playsinline 
-                                    onmouseover="this.play()" 
-                                    onmouseout="this.pause()">
-                                </video>
-                                <div class="card-reel__info">
-                                    <h4>Zouk</h4>
-                                    <p>350K Views</p>
-                                </div>
-                            </article>
-                            <article class="card-reel">
-                                <video 
-                                    class="card-reel__thumb" 
-                                    src="assets/reels/reels/Lililo.mp4" 
-                                    muted 
-                                    loop 
-                                    playsinline 
-                                    onmouseover="this.play()" 
-                                    onmouseout="this.pause()">
-                                </video>
-                                <div class="card-reel__info">
-                                    <h4>Lililo</h4>
-                                    <p>20K Views</p>
-                                </div>
-                            </article>
-                            <article class="card-reel">
-                                <video 
-                                    class="card-reel__thumb" 
-                                    src="assets/reels/reels/Ecoright.mp4" 
-                                    muted 
-                                    loop 
-                                    playsinline 
-                                    onmouseover="this.play()" 
-                                    onmouseout="this.pause()">
-                                </video>
-                                <div class="card-reel__info">
-                                    <h4>Ecoright</h4>
-                                    <p>15K Views</p>
-                                </div>
-                            </article>
-                            <article class="card-reel">
-                                <video 
-                                    class="card-reel__thumb" 
-                                    src="assets/reels/reels/Lucien.mp4" 
-                                    muted 
-                                    loop 
-                                    playsinline 
-                                    onmouseover="this.play()" 
-                                    onmouseout="this.pause()">
-                                </video>
-                                <div class="card-reel__info">
-                                    <h4>Lucien</h4>
-                                    <p>10K Views</p>
-                                </div>
-                            </article>
-                        </div>
-                        <button class="carousel-btn carousel-btn--next" aria-label="Next">&rarr;</button>
-                    </div>
-                </div>
-
+               
                 <!-- Category 4: Entertainment -->
                 <div class="portfolio__row">
                     <div class="portfolio__category-info">
