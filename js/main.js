@@ -3,19 +3,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const isTouchDevice = window.matchMedia("(hover: none)").matches;
 
     if (isTouchDevice) {
-        // MOBILE: Tap video to play / Tap again to pause
-        videos.forEach((video) => {
-            video.addEventListener("click", () => {
-                if (video.paused) {
-                    // Pause all other videos so only 1 plays at a time (prevents lag)
-                    videos.forEach((v) => { if (v !== video) v.pause(); });
+        // MOBILE: Auto-play whichever video is currently scrolled into view
+        const observerOptions = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.6 // Video plays when 60% of it is visible on screen
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                const video = entry.target;
+                if (entry.isIntersecting) {
                     video.muted = true;
-                    video.play().catch(() => {});
+                    video.play().catch(() => {
+                        // Autoplay blocked or prevented by browser power-saver mode
+                    });
                 } else {
                     video.pause();
                 }
             });
-        });
+        }, observerOptions);
+
+        videos.forEach((video) => observer.observe(video));
+
     } else {
         // DESKTOP: Hover to play / Mouse leave to pause
         videos.forEach((video) => {
